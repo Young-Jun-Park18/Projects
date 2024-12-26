@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Effect Landing Page</title>
+
+    <!--rel = "stylesheet" : 연결된 리소스와 이 HTML의 관계 = 외부 CSS 파일이다.-->
+    <!--href = "style.css" : 이 HTML 문서가 참조하는 리소스의 경로 = style.css의 이름이다.-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--defer : 스크립트가 DOM에 의존적인 작업을 수행해야 할 때 안전하고 효율적인 옵션이다.-->
+    <script src="main.js" defer></script>
+
+    <!--google icons와 연동 https://fonts.google.com/icons-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+
+  <body>
+    <!-- div는 블록 요소라서 가로 전체 너비를 차지하고, 새로운 줄에서 시작함.-->
+    <div class="wrap">
+      <!-- google icon 중 체크 모양 icon 삽입-->
+      <!-- span tag는 인라인 요소라서 다른 요소와 같은 줄에 나타남-->
+      <h1><span class="material-icons">verified</span></h1>
+
+      <!-- 동적인 텍스트-->
+      <!-- p#id값.class값 + tap으로 에밋할 수 있다.-->
+      <p id="dynamic" class="lg-text">Learn to Javascript</p>
+
+      <!-- 정적인 텍스트-->
+      <p class="sm-text">Design by Park Young Jun</p>
+    </div>
+  </body>
+</html>

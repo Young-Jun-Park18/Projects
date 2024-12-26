@@ -1,0 +1,57 @@
+/* 전체 */
+* {
+  /*margin은 외부 여백으로 부피가 크고 작아질 수 있습니다.*/
+  margin: 0;
+
+  /*padding은 내부 여백으로 내 요소가 크고 작아질 수 있습니다.*/
+  padding: 0;
+
+  /*border-box는 width/height가 나의 총 부피이므로 구역을 정확한 사이즈로 나눌 때 편리하다.*/
+  box-sizing: border-box;
+}
+
+body {
+  /*background-color는 단일 색상만 가능하므로 그라데이션 효과나 이미지는 background를 사용*/
+  /*linear-gradient(진행방향, 색상1, 색상2)는 선형 그라데이션 함수이다.*/
+  background: linear-gradient(
+    to top right,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc2a8d
+  );
+
+  /* %는 부모 요소 기준 %를 채우기 때문에, 브라우저 창의 높이의 맞춰 채우는 100vh 뷰포트를 100% 대신 사용한다 */
+  height: 100vh;
+}
+
+/*동적 텍스트*/
+.lg-text {
+  color: white;
+}
+
+/*정적 텍스트*/
+.sm-text {
+  color: white;
+}
+
+/*체크 아이콘*/
+.material-icons {
+  color: white;
+  /*기본html font-size의 n배수가 rem 단위이고, px은 고정 단위이다*/
+  font-size: 10rem;
+}
+
+/*항상 정중앙에 배치*/
+.wrap {
+  /*absolute : 가까운 부모 요소의 위치를 기준으로 상대적인 위치를 잡음*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*여기까지만 설정하면 요소의 왼쪽 상단이 중앙에 위치하므로 아래 코드가 필요*/
+  /*transform은 요소 자기 자신을 선택해서 translate(수직값, 수평값)를 통해 수직, 수평이동을 한다*/
+  transform: translate(-50%, -50%);
+  /*텍스트 가로축 중앙 정렬*/
+  text-align: center;
+}
