@@ -13,7 +13,6 @@ setInterval(blink, 500);
 let target = document.querySelector("#dynamic");
 // 미국 기업의 슬로건 배열
 let sloganArr = [
-  "Instagram : Capturing the world's moments",
   "Facebook : Move Fast and Break Things",
   "Apple : Think Different",
   "Tesla : Changing Perception",
@@ -54,7 +53,6 @@ function typingSlogan(Arr) {
 // 우리가 처음 배열 설정하고, 배열 크기를 넘지 않는 랜덤 값을 뽑고, 문장을 자르고, 값을 반환하는 것을 함수로 정의
 function randomString() {
   let sloganArr = [
-    "Instagram : Capturing the world's moments",
     "Facebook : Move Fast and Break Things",
     "Apple : Think Different",
     "Tesla : Changing Perception",
