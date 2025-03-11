@@ -1,0 +1,29 @@
+/*  --------header-------- */
+#header{
+  background-color: aquamarine;
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, .15);
+}
+
+.hearderInner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  z-index: 2;
+  padding: 0 100px;
+  padding-right: 600px;
+}
+
+
+.navBar .navList{
+  list-style: none;
+  display: flex;
+  padding: 20px 300px;
+}
+
+.navList .navElement{
+  margin: 0 45px;
+}
