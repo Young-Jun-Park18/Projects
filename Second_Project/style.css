@@ -1,0 +1,134 @@
+* {
+  /*요소와 요소간의 간격 초기화*/
+  margin: 0;
+  /*요소의 안쪽 경계 초기화*/
+  padding: 0;
+  /*box-sizing : content-box : 요소의 실제 크기가 여백이나 width 크기에 따라 달라짐*/
+  /*box-sizing : border-box : 요소의 크기는 내가 정한 width로 고정, 만약 여백을 키우면 요소가 그만큼 작아지고 전체 크기는 고정됨*/
+  box-sizing: border-box;
+}
+
+/*main class*/
+.wrapper {
+  /*width : 100%는 부모 요소의 너비 100%를 차지함*/
+  /*width : 100vw는 화면 뷰포트 너비 100%를 차지함*/
+  width: 100vw;
+  /*height도 width랑 똑같음 부모 요소냐, 뷰포트냐 차이*/
+  height: 100vh;
+  /*flex 컨테이너는 자식 요소를 수평 방향으로 나란히 배치한다*/
+  display: flex;
+  /*position : relative = 문서의 흐름을 따른다*/
+  position: relative;
+  /*가로 중앙 정렬*/
+  justify-content: center;
+  /*세로 중앙 정렬*/
+  align-items: center;
+  /*배경 색상 설정*/
+  background-color: rgb(1, 18, 27);
+  /*내리는 눈이 화면을 벗어나면 보이지 않게 설정*/
+  overflow: hidden;
+}
+
+/*div class*/
+.card {
+  /*부모 요소인 wrapper의 가로 길이 중 50%를 차지*/
+  width: 50%;
+  /*height : auto = 내부 텍스트나 이미지 요소 크기에 알맞게 높이를 자동 설정*/
+  height: auto;
+  display: flex;
+  /*display가 flex라 수평으로 나란히 배치되는데 flex-direction : column을 통해 세로 배치하게 함*/
+  flex-direction: column;
+  position: relative;
+  /*콘텐츠와 테두리 사이 안쪽 여백*/
+  /*rem 단위는 html 폰트 크기 기준, 보통 1rem = 16px*/
+  padding: 3rem;
+  /*테두리 둥글게*/
+  border-radius: 0.25rem;
+  /*눈이 뒤로 내리게 card의 z index*/
+  z-index: 10;
+  /*box-shadow : x축 그림자, y축 그림자, 그림자 퍼지는 정도, 색상*/
+  box-shadow: 0 0 2rem rgb(38, 99, 73);
+}
+
+/*h1 tag*/
+h1 {
+  font-size: 3rem;
+  /*대체 글꼴 cursive*/
+  font-family: "Oooh Baby", cursive;
+  color: #e46f01;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/*p tag*/
+p {
+  font-size: 0.875rem;
+  color: white;
+}
+
+/*::after는 실제 DOM에 존재하지 않지만 가상요소를 추가할 때 사용*/
+/*DOM이란 HTML 문서를 구조화하며 표현한 객체 모델, JS를 통해 HTML 요소에 접근하거나 조작할 수 있게 도와줌*/
+.card::after {
+  /*부모요소인 카드 가로 길이의 100%*/
+  width: 100%;
+  height: 10px;
+  /*position: absolute = 문서의 흐름에서 제외되고, 가장 인접한 부모 위치를 기준으로 한다*/
+  position: absolute;
+  /* 부모 요소의 위쪽에 배치 */
+  top: 0;
+  left: 0;
+  /*실제 내용이 없는 비어 있는 문자열*/
+  content: "";
+  /*linear-gradient{}는 대각선 그라데이션 효과를 설정해줌*/
+  background-image: linear-gradient(
+    /*deg는 각도를 나타내는 단위 -45도*/ -45deg,
+    #0c6333 25%,
+    #d61334 25%,
+    #d61334 50%,
+    #0c6333 50%,
+    #0c6333 75%,
+    #d61334 75%,
+    #d61334 100%
+  );
+  /*배경이 너비와 높이 설정*/
+  background-size: 85px 85px;
+  /* 카드 위로 올라오도록 설정 */
+  z-index: 15;
+}
+
+.snow {
+  /*눈의 가로 세로 크기*/
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  /*화면보다 위에서 시작지점 설정*/
+  top: -10px;
+  display: block;
+  /*눈의 색상 화이트 설정*/
+  background-color: white;
+  /*눈의 둥글기 설정*/
+  border-radius: 3px;
+  /*살짝 흐리게 만들어주는 필터효과*/
+  filter: blur(1px);
+  /*keyframes에서 정의한 snowfallㅇ 애니메이션 상태 적용*/
+  animation: snowfall;
+  /*애니메이션 속도 설정 linear = 일정한 속도*/
+  animation-timing-function: linear;
+  /*애니메이션 반복 횟수 설정 infinite = 영구적으로 반복*/
+  animation-iteration-count: infinite;
+}
+
+/*keyframes = 애니메이션의 상태 정의*/
+@keyframes snowfall {
+  /*시작 상태*/
+  from {
+    top: -10px;
+    /*선명도*/
+    opacity: 1;
+  }
+  /*종료 상태*/
+  to {
+    top: 99%;
+    opacity: 0;
+  }
+}
